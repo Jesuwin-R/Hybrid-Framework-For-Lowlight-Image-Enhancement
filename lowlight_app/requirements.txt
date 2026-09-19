@@ -2,8 +2,8 @@ flask
 opencv-python
 numpy
 scikit-image
-torch
-torchvision
+torch==2.12.0
+torchvision==0.27.0
 huggingface_hub
-
 gunicorn
+--extra-index-url https://download.pytorch.org/whl/cpu
