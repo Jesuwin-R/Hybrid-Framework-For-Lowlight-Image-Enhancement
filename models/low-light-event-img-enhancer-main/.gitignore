@@ -1,0 +1,12 @@
+data/
+model/weights/
+wandb/
+inference/results/
+colab_runner.ipynb
+
+*/__pycache__
+__pycache__/
+
+tracking.txt
+test.py
+.tmp.driveupload

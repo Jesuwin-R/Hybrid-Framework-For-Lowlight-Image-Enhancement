@@ -1,0 +1,14 @@
+huggingface
+datasets
+torch
+torchvision
+albumentations
+wandb
+pyyaml
+tqdm
+pytest
+streamlit
+flask
+werkzeug
+numpy
+opencv-python

@@ -1,0 +1,66 @@
+﻿# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Runtime
+lowlight_app/uploads/
+lowlight_app/outputs/
+*.deploy-backup
+
+# Experiments / datasets
+dataset/
+my_test/
+notebooks/
+outputs/
+
+# Training checkpoints
+snapshots_SICE/Epoch*.pth
+snapshots_SICE/latest_checkpoint.pth
+snapshots_SICE_v2/Epoch*.pth
+snapshots_SICE_v2/latest_checkpoint.pth
+
+# Keep only the Zero-DCE checkpoint actually used by the app
+models/Zero-DCE/snapshots/
+
+# RetinexNet test/training data
+models/RetinexNet/data/
+models/RetinexNet/images/
+models/RetinexNet/results/
+
+# SCI datasets/results
+models/SCI-main/CVPR/data/
+models/SCI-main/CVPR/results/
+models/SCI-main/CVPR/Figs/
+models/SCI-main/CVPR/weights/easy.pt
+models/SCI-main/CVPR/weights/medium.pt
+models/SCI-main/TPAMI/data/
+models/SCI-main/TPAMI/results/
+models/SCI-main/TPAMI/Figs/
+models/SCI-main/TPAMI/weights/
+
+# MIRNet unnecessary material
+models/low-light-event-img-enhancer-main/dataset_generation/
+models/low-light-event-img-enhancer-main/tests/
+models/low-light-event-img-enhancer-main/training/
+models/low-light-event-img-enhancer-main/utils/documentation_images/
+models/low-light-event-img-enhancer-main/utils/assets/
+models/low-light-event-img-enhancer-main/app/
+models/low-light-event-img-enhancer-main/.github/
+
+# IDE / OS
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db
+
+# Zero-DCE++ datasets and generated results
+models/Zero-DCE++/data/
+
+# Unused SICE checkpoint
+snapshots_SICE/best_model.pth
+
+# RetinexNet checkpoints (current app uses placeholder implementation)
+models/RetinexNet/ckpts/

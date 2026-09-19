@@ -1,0 +1,7 @@
+flask
+opencv-python
+numpy
+scikit-image
+torch
+torchvision
+huggingface_hub

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Low-Light Enhancement Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">◐</span>
+    <span class="brand-name">Low-Light Enhancement Lab</span>
+  </div>
+  <p class="brand-tag">Zero-DCE · Zero-DCE++ · RetinexNet · MIRNet · SCI</p>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>From <span class="dim">dim</span> to <span class="lit">legible</span>.</h1>
+      <p>Upload a dark photo. All 5 models enhance it independently — see each model's
+      quality score — then their outputs are fused together, weighted by quality.</p>
+    </div>
+
+    <div class="dropzone" id="dropzone">
+      <input type="file" id="fileInput" accept="image/*" hidden>
+      <div class="dropzone-inner">
+        <span class="dropzone-icon">＋</span>
+        <span class="dropzone-label">Drop an image, or tap to choose one</span>
+        <span class="dropzone-sub">JPG or PNG, up to 16MB</span>
+      </div>
+    </div>
+
+    <button id="runBtn" class="run-btn" disabled>Enhance Image</button>
+  </section>
+
+  <section id="status" class="status hidden"></section>
+  <section id="progressWrap" class="progress-wrap hidden">
+    <div class="progress-bar"><div id="progressBarFill" class="progress-bar-fill"></div></div>
+  </section>
+
+  <section id="resultsSection" class="results hidden">
+    <div class="results-header">
+      <h2>Comparison</h2>
+    </div>
+
+    <div class="original-block">
+      <span class="block-label">Original (input)</span>
+      <img id="originalImg" alt="Original low-light input">
+    </div>
+
+    <div id="fusionCardWrap"></div>
+
+    <div class="overview">
+      <span class="block-label">5 model outputs</span>
+      <div id="overviewThumbs" class="overview-thumbs"></div>
+      <span class="block-label" style="margin-top:20px;display:block">Quality score per model — Qi = weighted(brightness balance, contrast, entropy, sharpness, colorfulness), 0–1</span>
+      <div id="overviewChart" class="overview-chart"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Built for the Adaptive Hybrid Low-Light Enhancement research project.</p>
+</footer>
+
+<div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Enlarged image">
+  <button id="lightboxClose" class="lightbox-close" aria-label="Close">&times;</button>
+  <img id="lightboxImg" alt="">
+  <div id="lightboxCaption" class="lightbox-caption"></div>
+  <button id="lightboxCompare" class="lightbox-compare hidden" type="button">Hold to compare</button>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
